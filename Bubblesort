@@ -1,0 +1,12 @@
+function sortArray(data, ascending) {
+  for (let i = 0; i < data.length; i++) {
+    for (let j = 0; j < data.length - 1; j++) {
+      if ((ascending && data[j] > data[j + 1]) || (!ascending && data[j] < data[j + 1])) {
+        [data[j], data[j + 1]] = [data[j + 1], data[j]]; // Використання деструктуризації для обміну
+      }
+    }
+  }
+  return data;
+}
+
+console.log(sortArray([3, 5, 9, -1], false));
